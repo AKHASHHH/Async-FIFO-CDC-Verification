@@ -1,0 +1,124 @@
+# ============================================================
+# Synopsys VCS
+# ============================================================
+
+csrc/
+sim/
+simv
+simv.*
+simv.daidir/
+*.daidir/
+
+ucli.key
+cm.log
+cm.log.*
+*.vdb
+
+DVEfiles/
+AN.DB/
+urgReport/
+
+# Compiler / generated objects
+*.o
+*.so
+*.a
+*.db
+*.sdb
+*.json
+*.xml
+
+# ============================================================
+# Waveform databases
+# ============================================================
+
+*.fsdb
+*.vpd
+*.vcd
+*.shm
+
+# ============================================================
+# Coverage generated files
+# ============================================================
+
+coverage/urg_report/
+coverage/*.vdb/
+*.vdb/
+
+# ============================================================
+# Regression / simulation output
+# ============================================================
+
+logs/
+*.log
+
+# ============================================================
+# Verdi generated files
+# ============================================================
+
+verdiLog/
+nWaveLog/
+
+novas.conf
+novas.rc
+novas_dump.log
+novas_dump.log.*
+
+*.novas.*
+
+# ============================================================
+# VC Static / SpyGlass generated files
+# ============================================================
+
+**/vcst_rtdb/
+**/vcst_rtdb.bak/
+
+*.prj.tcl
+*.prj.tcl.bak
+*.prj.tcl.bak.*
+
+spyglass.out
+spyglass.log
+
+vcst_command.log
+vcst_session.log
+vcst_session.log.*
+
+.vcstPref
+
+# Keep source project / constraint files
+!cdc/*.prj
+!cdc/*.sgdc
+
+# ============================================================
+# Generated debug / backup RTL
+# ============================================================
+
+rtl/*_good.sv
+rtl/*_backup.sv
+rtl/*.bak
+
+# ============================================================
+# Editor temporary files
+# ============================================================
+
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+*.orig
+
+# ============================================================
+# OS files
+# ============================================================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# Miscellaneous EDA generated files
+# ============================================================
+
+.fsm.*
+*.sch.verilog.xml
