@@ -1,0 +1,7 @@
+current_design "async_fifo"
+
+clock -name "async_fifo.wr_clk" -domain wr_domain -tag WR_CLK
+clock -name "async_fifo.rd_clk" -domain rd_domain -tag RD_CLK
+
+reset -async -name "async_fifo.wr_rst_n" -value 0
+reset -async -name "async_fifo.rd_rst_n" -value 0

@@ -1,0 +1,6 @@
+set_option enableSV yes
+
+read_file -type verilog ../rtl/async_fifo.sv
+read_file -type sgdc async_fifo.sgdc
+
+set_option top async_fifo
