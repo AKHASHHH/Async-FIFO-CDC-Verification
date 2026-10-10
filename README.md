@@ -785,3 +785,13 @@ Rather than relying only on directed simulation, the FIFO was verified using ass
 The final design passed all directed and randomized checks, achieved 100% of the defined functional coverage bins, passed 100 regression seeds and four clock-ratio configurations, and had both Gray-pointer CDC structures successfully analyzed by Synopsys VC Static.
 
 An intentionally introduced full-detection defect was also detected by the verification environment, traced to its root cause in Verdi, corrected, and followed by complete regression revalidation.
+
+---
+
+## 👤 Author
+
+---
+
+**D. Akhash Krishna**
+
+GitHub: [Async-FIFO-CDC-Verification](https://github.com/AKHASHHH/Async-FIFO-CDC-Verification)
