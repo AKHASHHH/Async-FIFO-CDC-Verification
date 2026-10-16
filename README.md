@@ -1,5 +1,29 @@
 # Async FIFO CDC Verification
 
+<p align="center"><strong>Asynchronous FIFO · CDC · Gray pointers · VCS / Verdi / VC Static</strong></p>
+
+<p align="center"><a href="#project-overview">Overview</a> &nbsp;·&nbsp; <a href="#architecture">Architecture</a> &nbsp;·&nbsp; <a href="#cdc-synchronization">CDC</a> &nbsp;·&nbsp; <a href="#functional-coverage">Coverage</a> &nbsp;·&nbsp; <a href="#multi-seed-regression">Regressions</a> &nbsp;·&nbsp; <a href="#static-cdc-analysis">Static CDC</a> &nbsp;·&nbsp; <a href="#intentional-bug-injection">Bug debug</a> &nbsp;·&nbsp; <a href="#-author">Author</a></p>
+
+## Clock-domain crossing at a glance
+
+```mermaid
+flowchart LR
+  subgraph WR["Write clock domain"]
+    W["wr_en / write control"] --> MEM["FIFO memory"]
+    WB["Binary write pointer"] --> WG["Gray write pointer"]
+    WG --> WF["full logic"]
+  end
+  subgraph RD["Read clock domain"]
+    MEM --> R["rd_en / read control"]
+    RB["Binary read pointer"] --> RG["Gray read pointer"]
+    RG --> RE["empty logic"]
+  end
+  WG --> W2R["2-FF synchronizer"] --> RE
+  RG --> R2W["2-FF synchronizer"] --> WF
+```
+
+*Conceptual CDC paths only: Gray-coded pointers cross domains through two-flop synchronizers; payload data remains in FIFO memory.*
+
 A complete Design Verification project for a parameterized asynchronous FIFO using **SystemVerilog, SVA, Synopsys VCS, Verdi, functional coverage, regression automation, and Synopsys VC Static / SpyGlass CDC**.
 
 The project verifies reliable FIFO operation across independent write and read clock domains, with particular focus on **clock-domain crossing, Gray-coded pointer synchronization, full/empty detection, randomized verification, coverage closure, static CDC analysis, and waveform-based root-cause debugging**.
